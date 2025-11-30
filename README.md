@@ -24,7 +24,8 @@ kind create cluster --name hangman-cluster
 
 **Screenshot: Creating kind cluster**
 
-[PASTE SCREENSHOT HERE - kind create cluster command output]
+<img width="769" height="139" alt="Screenshot 2025-11-29 at 7 54 24 PM" src="https://github.com/user-attachments/assets/93d28548-5be7-48fb-93fb-648c3f1bc5d5" />
+
 
 ---
 
@@ -42,11 +43,7 @@ This script builds three Docker images:
 
 **Screenshot: Building Docker images**
 
-[PASTE SCREENSHOT HERE - build-images.sh output showing all three images being built]
-
-**Screenshot: Docker images list**
-
-[PASTE SCREENSHOT HERE - docker images output showing the built images]
+<img width="748" height="104" alt="Screenshot 2025-11-29 at 7 55 02 PM" src="https://github.com/user-attachments/assets/62be8d11-c327-4080-addd-3d0aeb19d52f" />
 
 ---
 
@@ -61,7 +58,7 @@ kind load docker-image hangman-leaderboard-service:latest --name hangman-cluster
 
 **Screenshot: Loading images into kind cluster**
 
-[PASTE SCREENSHOT HERE - kind load docker-image commands output]
+<img width="939" height="136" alt="Screenshot 2025-11-29 at 7 55 14 PM" src="https://github.com/user-attachments/assets/eefc09cf-3b4e-4258-b7ae-fd5f0843639f" />
 
 ---
 
@@ -80,7 +77,7 @@ This script:
 
 **Screenshot: Running deploy.sh**
 
-[PASTE SCREENSHOT HERE - deploy.sh output showing all resources being created]
+<img width="616" height="346" alt="Screenshot 2025-11-29 at 7 55 22 PM" src="https://github.com/user-attachments/assets/1df9e0c7-18c2-423f-928b-91a58f2d6d11" />
 
 ---
 
@@ -95,7 +92,7 @@ kubectl get pods -n hangman
 
 **Screenshot: All pods in Running status**
 
-[PASTE SCREENSHOT HERE - kubectl get pods showing all 8 pods running]
+<img width="568" height="154" alt="Screenshot 2025-11-29 at 8 22 56 PM" src="https://github.com/user-attachments/assets/b930e1f4-2796-4e60-8b89-cadd94825566" />
 
 Expected output:
 - 2 frontend pods
@@ -112,24 +109,13 @@ kubectl get svc -n hangman
 
 **Screenshot: All services**
 
-[PASTE SCREENSHOT HERE - kubectl get svc showing all services]
+<img width="632" height="88" alt="Screenshot 2025-11-29 at 8 23 23 PM" src="https://github.com/user-attachments/assets/de1d6334-c23b-4764-b72c-d9e0db67549b" />
 
 Expected services:
 - frontend (NodePort - port 30000)
 - game-service (ClusterIP - port 5001)
 - leaderboard-service (ClusterIP - port 5002)
 - postgres (ClusterIP - port 5432)
-
-### 5.3 Complete Deployment Overview
-
-Command:
-```bash
-kubectl get all -n hangman
-```
-
-**Screenshot: Complete deployment status**
-
-[PASTE SCREENSHOT HERE - kubectl get all showing pods, services, deployments, and replicasets]
 
 ---
 
@@ -142,43 +128,17 @@ kubectl port-forward -n hangman svc/frontend 30000:5000
 
 **Screenshot: Port forwarding active**
 
-[PASTE SCREENSHOT HERE - kubectl port-forward command running and showing "Forwarding from 127.0.0.1:30000 -> 5000"]
+<img width="769" height="139" alt="Screenshot 2025-11-29 at 7 54 24 PM" src="https://github.com/user-attachments/assets/60e104b3-0ab8-40ce-8ca2-ea7a04524ea9" />
 
 ---
 
-## 7. Application Screenshots
+## 7. Application Running Screnshot
 
 ### 7.1 Home Page
 
 URL: http://localhost:30000
 
-**Screenshot: Application home page showing leaderboard**
-
-[PASTE SCREENSHOT HERE - Browser showing Hangman home page with leaderboard]
-
-### 7.2 Starting a New Game
-
-**Screenshot: New game page with player name input**
-
-[PASTE SCREENSHOT HERE - New game form where user enters their name]
-
-### 7.3 Playing the Game
-
-**Screenshot: Active game showing word progress and guessed letters**
-
-[PASTE SCREENSHOT HERE - Game in progress with partially guessed word]
-
-### 7.4 Winning a Game
-
-**Screenshot: Game won screen showing score**
-
-[PASTE SCREENSHOT HERE - Completed game showing the word was guessed correctly and final score]
-
-### 7.5 Updated Leaderboard
-
-**Screenshot: Leaderboard updated with new winning score**
-
-[PASTE SCREENSHOT HERE - Home page showing updated leaderboard with the new game result]
+<img width="729" height="348" alt="Screenshot 2025-11-29 at 8 24 46 PM" src="https://github.com/user-attachments/assets/03a5e92f-f335-45fb-8c35-085fdbe03954" />
 
 ---
 
@@ -215,13 +175,13 @@ URL: http://localhost:30000
 
 ## Key Features Demonstrated
 
-✅ **Microservices Architecture** - Application broken into independent services
-✅ **Container Orchestration** - Kubernetes managing multiple containers
-✅ **Service Discovery** - Services communicate via Kubernetes DNS
-✅ **Load Balancing** - Multiple replicas with automatic load distribution
-✅ **Persistent Storage** - PostgreSQL data persists across pod restarts
-✅ **Health Checks** - Liveness and readiness probes configured
-✅ **Scalability** - Independent scaling of each service
+**Microservices Architecture** - Application broken into independent services
+**Container Orchestration** - Kubernetes managing multiple containers
+**Service Discovery** - Services communicate via Kubernetes DNS
+**Load Balancing** - Multiple replicas with automatic load distribution
+**Persistent Storage** - PostgreSQL data persists across pod restarts
+**Health Checks** - Liveness and readiness probes configured
+**Scalability** - Independent scaling of each service
 
 ---
 
