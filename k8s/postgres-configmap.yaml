@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: hangman
+data:
+  POSTGRES_DB: hangman
+  POSTGRES_USER: hangman_user
